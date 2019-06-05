@@ -1,11 +1,11 @@
-import React from 'react'
-import { cleanup, render } from '@testing-library/react'
-import Header from './Header';
+import React from "react";
+import { cleanup, render } from "@testing-library/react";
+import Header from "./Header";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('<Header />', () => {
-  it('renders without crashing', () => {
-    render(<Header />)
-  })
-})
+describe("<Header />", () => {
+  it("renders without crashing", () => {
+    render(<Header />);
+  });
+});

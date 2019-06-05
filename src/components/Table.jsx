@@ -1,42 +1,58 @@
-import React from 'react'
-import propTypes from 'prop-types'
+import React from "react";
+import propTypes from "prop-types";
+import styled from 'styled-components'
 
-export default function Table({ elementCount }) {
+export const Table = styled.table`
+  border: 1px solid #222;
+  width: 100%;
+  border-collapse: collapse;
+`
+
+const TableHead = styled.thead`
+  font-weight: 700;
+  background: #ccc;
+`
+const TableTr = styled.tr`
+  border: 1px solid #222;
+ 
+`
+
+export default function FakeRowTable({ elementCount }) {
   //const elementCount = props.elementCount;
   //const { elementCount } = props;
 
-  const rows = []
-  
+  const invoiceRows = [];
+
   for (let i = 0; i < elementCount; i++) {
-    rows.push({
+    invoiceRows.push({
       partNumber: `ASNA2151-0${i}`,
       qty: i,
-      price: 17 + i,
+      price: 17 + i
     });
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
+    <Table>
+      <TableHead>
+        <TableTr>
           <th>Part number</th>
           <th>Qty</th>
           <th>Price</th>
-        </tr>
-      </thead>
+        </TableTr>
+      </TableHead>
       <tbody>
-        {rows.map(row => (
-          <tr key={row.partNumber} data-testid="table-rows">
-            <td>{row.partNumber}</td>
-            <td>{row.qty}</td>
-            <td>{row.price}</td>
-          </tr>
+        {invoiceRows.map(invoiceRow => (
+          <TableTr key={invoiceRow.partNumber} data-testid="table-rows">
+            <td>{invoiceRow.partNumber}</td>
+            <td>{invoiceRow.qty}</td>
+            <td>{invoiceRow.price}</td>
+          </TableTr>
         ))}
       </tbody>
-    </table>
-  )
+    </Table>
+  );
 }
 
-// Table.propTypes = {
-//   elementCount: propTypes.number.isRequired,
-// }
+FakeRowTable.propTypes = {
+  elementCount: propTypes.number.isRequired
+};

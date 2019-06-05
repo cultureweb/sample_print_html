@@ -1,11 +1,11 @@
-import React from 'react'
-import { cleanup, render } from '@testing-library/react'
-import Footer from './Footer';
+import React from "react";
+import { cleanup, render } from "@testing-library/react";
+import Footer from "./Footer";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('<Footer />', () => {
-  it('should renders without crashing', () => {
-    render(<Footer />)
-  })
-})
+describe("<Footer />", () => {
+  it("should renders without crashing", () => {
+    render(<Footer />);
+  });
+});

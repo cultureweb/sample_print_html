@@ -8,7 +8,8 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <Table elementcount={3}/>
+         {/* Change elementCount TO elementcount and save runt test and see what happened */}
+        <Table elementCount={50}/>
       </main>
       <Footer />
     </div>
