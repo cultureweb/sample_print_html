@@ -6,7 +6,7 @@ import Table from './components/Table';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <main>
          {/* Change elementCount TO elementcount and save runt test and see what happened */}
         <Table elementCount={50}/>

@@ -14,7 +14,10 @@ const TableHead = styled.thead`
 `
 const TableTr = styled.tr`
   border: 1px solid #222;
- 
+`
+
+const Td = styled.td`
+  height: 35px;
 `
 
 export default function FakeRowTable({ elementCount }) {
@@ -43,9 +46,9 @@ export default function FakeRowTable({ elementCount }) {
       <tbody>
         {invoiceRows.map(invoiceRow => (
           <TableTr key={invoiceRow.partNumber} data-testid="table-rows">
-            <td>{invoiceRow.partNumber}</td>
-            <td>{invoiceRow.qty}</td>
-            <td>{invoiceRow.price}</td>
+            <Td>{invoiceRow.partNumber}</Td>
+            <Td>{invoiceRow.qty}</Td>
+            <Td>{invoiceRow.price}</Td>
           </TableTr>
         ))}
       </tbody>
